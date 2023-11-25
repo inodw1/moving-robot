@@ -1,39 +1,34 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import styles from "./App.module.scss";
+import React, { useState, useCallback } from "react";
+import Grid from "./components/grid";
+import Navigation from "./components/navigation";
+import { GRID_SIZE, START_POSITION } from "./config";
+import "./app.scss";
 
 function App() {
-    const [count, setCount] = useState(0);
+    const [position, setPosition] = useState(START_POSITION);
+
+    const move = useCallback((direction) => {
+        setPosition((prevPosition) => {
+            let { x, y } = prevPosition;
+            if (direction === "North" && y > 1) y -= 1;
+            if (direction === "South" && y < GRID_SIZE) y += 1;
+            if (direction === "East" && x < GRID_SIZE) x += 1;
+            if (direction === "West" && x > 1) x -= 1;
+            return { x, y };
+        });
+    }, []);
+
+    const teleport = useCallback((x, y) => {
+        setPosition({ x, y });
+    }, []);
 
     return (
-        <>
-            <div>
-                <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-                    <img
-                        src={viteLogo}
-                        className={styles.logo}
-                        alt="Vite logo"
-                    />
-                </a>
-                <a href="https://react.dev" target="_blank" rel="noreferrer">
-                    <img
-                        src={reactLogo}
-                        className={[styles.logo, styles.react].join(" ")}
-                        alt="React logo"
-                    />
-                </a>
+        <div className="app-container">
+            <Grid position={position} onCellClick={teleport} />
+            <div className="navigation-container-wrapper">
+                <Navigation onMove={move} />
             </div>
-            <h1>Vite + React</h1>
-            <div className={styles.card}>
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p className={styles.readTheDocs}>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-        </>
+        </div>
     );
 }
 
