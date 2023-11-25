@@ -33,16 +33,16 @@ const NavigationComponent = ({ onMove }) => {
 
     return (
         <div className="navigation-container">
-            <button onClick={() => onMove("North")}>
+            <button data-testid="north-btn" onClick={() => onMove("North")}>
                 {navigationText.north}
             </button>
-            <button onClick={() => onMove("South")}>
+            <button data-testid="south-btn" onClick={() => onMove("South")}>
                 {navigationText.south}
             </button>
-            <button onClick={() => onMove("East")}>
+            <button data-testid="east-btn" onClick={() => onMove("East")}>
                 {navigationText.east}
             </button>
-            <button onClick={() => onMove("West")}>
+            <button data-testid="west-btn" onClick={() => onMove("West")}>
                 {navigationText.west}
             </button>
         </div>

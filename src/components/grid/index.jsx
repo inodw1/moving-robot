@@ -10,6 +10,7 @@ const GridComponent = ({ position, onCellClick }) => {
             key={`${x}-${y}`}
             className={`grid-cell ${isRobotHere ? "robot-cell" : ""}`}
             onClick={() => onCellClick(x, y)}
+            data-testid={`cell-${x}-${y}`}
         >
             {isRobotHere && <Robot />}
         </div>
