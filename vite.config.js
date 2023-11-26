@@ -3,11 +3,7 @@
 
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,15 +12,15 @@ export default defineConfig({
         globals: true,
         environment: "jsdom",
     },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                // additionalData: `@import "./src/assets/styles/global.scss";`,
-                additionalData: `@import "${resolve(
-                    __dirname,
-                    "src/assets/styles/global.scss"
-                )}";`,
-            },
-        },
-    },
+    // css: {
+    //     preprocessorOptions: {
+    //         scss: {
+    //             // additionalData: `@import "./src/assets/styles/global.scss";`,
+    //             additionalData: `@import "${resolve(
+    //                 __dirname,
+    //                 "src/assets/styles/global.scss"
+    //             )}";`,
+    //         },
+    //     },
+    // },
 });
