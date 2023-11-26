@@ -1,33 +1,55 @@
-# React + Vite
+# React + Vite Project Setup
+
+This section provides instructions on how to set up the project locally and how to run test cases.
+
+## Working Demo
+
+Experience the live demo of the project here: [Moving Robot Demo](https://moving-robot.netlify.app/)
+
+## Local Setup
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Run the following commands in the project directory:
+
+   ```bash
+   npm install   # Installs project dependencies
+   npm run dev   # Starts the development server
+
+## Running Test Cases
+
+To run the test cases for the project, use the following command:
+
+```bash
+npm run test  # Executes the test cases
+```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Robot Movement Simulation
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Challenge Overview
 
-Coding Challenge – React JS
+This coding challenge involves creating a program using ReactJS to simulate the movements of a simple robot. The primary goal is to enable the robot to navigate a virtual table without falling off the edges.
 
-This coding challenge is to simulate movement of a simple robot. Write a program using ReactJS to
-simulate robot’s movements.
-Basic requirement
- The robot is placed on a square table of dimensions 5 units x 5 units.
- Initially the robot is placed at the cell 1,1
- Robot is free to move around the table surface, as there are no obstructions, however it should not
-fall from the table edge.
- Robot travels can move North, East, South or West by one unit at a time. There should be
-navigation buttons to make this possible.
- Clicking/tapping on a cell will teleport the robot to that cell. Robot will be able to travel in any
-direction using this method
-Optional
- Teleporting should delay based on the distance the robot has to travel.
+## Basic Requirements
 
-![Alt text](image.png)
+1. **Table Dimension**: The robot moves on a square table with dimensions of 5 units x 5 units.
+2. **Initial Position**: The robot is initially placed at the cell (1,1).
+3. **Movement**: The robot can move North, East, South, or West, one unit at a time. Implement navigation buttons for these movements.
+4. **Teleportation**: Clicking/tapping on a cell teleports the robot to that cell, enabling it to travel in any direction from there.
 
-Additional info
- Simple UI is provided above; feel free to embellish UI or functionality.
- Consider patterns, best practices, testability etc. when implementing your solution.
- Write a unit test at least for the most critical component.
- Submit your solution as standalone project, online project hosted in codesandbox.io etc. or a
-GitHub repo.
+## Optional Enhancements
+
+- **Teleportation Delay**: Implement a delay for teleporting, proportional to the distance the robot must travel.
+
+![Robot Movement Simulation UI](image.png)
+
+*Note: The above image provides a basic UI reference. You are encouraged to enhance both the UI and functionality.*
+
+## Additional Guidelines
+
+- **Best Practices**: Consider design patterns, best practices, and testability in your implementation.
+- **Unit Testing**: Include at least one unit test, focusing on the most critical component of your application.
+- **Submission**: Submit your solution as a standalone project, an online project hosted on platforms like codesandbox.io, or a GitHub repository.
